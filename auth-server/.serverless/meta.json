@@ -1,0 +1,73 @@
+{
+  "C:\\Users\\Paul\\OneDrive\\Documents\\Projects\\meet\\auth-server": {
+    "versionSfCore": null,
+    "versionFramework": "4.2.1",
+    "isWithinCompose": false,
+    "isCompose": false,
+    "composeOrgName": null,
+    "composeResolverProviders": {
+      "default-aws-credential-resolver": "<REDACTED>"
+    },
+    "composeServiceName": null,
+    "servicePath": "C:\\Users\\Paul\\OneDrive\\Documents\\Projects\\meet\\auth-server",
+    "serviceConfigFileName": "serverless.yml",
+    "service": {
+      "service": "auth-server",
+      "provider": {
+        "name": "aws",
+        "runtime": "nodejs16.x",
+        "region": "us-east-1",
+        "stage": "dev",
+        "versionFunctions": true
+      },
+      "functions": {
+        "hello": {
+          "handler": "handler.hello",
+          "events": [],
+          "name": "auth-server-dev-hello"
+        }
+      }
+    },
+    "serviceRawFile": "service: auth-server\r\n\r\nprovider:\r\n  name: aws\r\n  runtime: nodejs16.x\r\n  region: us-east-1\r\n\r\nfunctions:\r\n  hello:\r\n    handler: handler.hello",
+    "command": [
+      "info"
+    ],
+    "options": {},
+    "error": null,
+    "params": {},
+    "machineId": "7aeceb1bdfccd7de7b0ca4f359f22114",
+    "accessKeyV2": "<REDACTED>",
+    "accessKeyV1": "<REDACTED>",
+    "orgId": "81dcfd3b-5824-4160-b108-0fcda7a8a11f",
+    "orgName": "devmarg",
+    "userId": "vSg38HxgMXpXtBs67Z",
+    "dashboard": {
+      "isEnabledForService": false,
+      "requiredAuthentication": false,
+      "orgFeaturesInUse": null,
+      "orgObservabilityIntegrations": null,
+      "serviceAppId": null,
+      "serviceProvider": null,
+      "instanceParameters": null
+    },
+    "userName": "devmarg",
+    "subscription": null,
+    "userEmail": "gurau.margarita@gmail.com",
+    "serviceProviderAwsCredentials": "<REDACTED>",
+    "serviceProviderAwsAccountId": "253490772772",
+    "projectType": "framework",
+    "versionSf": "4.2.1",
+    "serviceProviderAwsCfStackName": "auth-server-dev",
+    "integrations": {},
+    "serviceProviderAwsCfStackId": "arn:aws:cloudformation:us-east-1:253490772772:stack/auth-server-dev/54320e00-6088-11ef-ba13-12d9638ab2d5",
+    "serviceProviderAwsCfStackCreated": "2024-08-22T13:13:31.681Z",
+    "serviceProviderAwsCfStackUpdated": "2024-08-22T13:13:58.409Z",
+    "serviceProviderAwsCfStackStatus": "UPDATE_ROLLBACK_COMPLETE",
+    "serviceProviderAwsCfStackOutputs": [
+      {
+        "OutputKey": "ServerlessDeploymentBucketName",
+        "OutputValue": "auth-server-dev-serverlessdeploymentbucket-8873v0er4qqo"
+      }
+    ]
+  }
+}
