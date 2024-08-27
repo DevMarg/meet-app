@@ -1,12 +1,59 @@
 {
   "C:\\Users\\Paul\\OneDrive\\Documents\\Projects\\meet\\auth-server": {
     "versionSfCore": null,
-    "versionFramework": "4.2.1",
+    "versionFramework": "4.2.4",
     "isWithinCompose": false,
     "isCompose": false,
     "composeOrgName": null,
     "composeResolverProviders": {
-      "default-aws-credential-resolver": "<REDACTED>"
+      "default-aws-credential-resolver": "<REDACTED>",
+      "file": {
+        "instance": {
+          "credentials": "<REDACTED>",
+          "serviceConfigFile": {
+            "service": "auth-server",
+            "provider": {
+              "name": "aws",
+              "runtime": "nodejs16.x",
+              "region": "eu-west-1",
+              "timeout": 30,
+              "environment": {
+                "CLIENT_ID": "795360494373-cfrv0pcv9avsr5rjd9am9ich9jm5qjpn.apps.googleusercontent.com",
+                "CLIENT_SECRET": "<REDACTED>",
+                "CALENDAR_ID": "fullstackwebdev@careerfoundry.com",
+                "IS_LOCAL": "true"
+              },
+              "stage": "dev",
+              "versionFunctions": true
+            },
+            "functions": {
+              "getAuthURL": {
+                "handler": "handler.getAuthURL",
+                "events": [
+                  {
+                    "http": {
+                      "path": "api/get-auth-url",
+                      "method": "get"
+                    }
+                  }
+                ],
+                "name": "auth-server-dev-getAuthURL"
+              }
+            }
+          },
+          "configFileDirPath": "C:\\Users\\Paul\\OneDrive\\Documents\\Projects\\meet\\auth-server",
+          "config": {
+            "type": "file"
+          },
+          "options": {
+            "function": "getAuthURL"
+          },
+          "stage": "dev",
+          "dashboard": null,
+          "_credentialsPromise": "<REDACTED>"
+        },
+        "resolvers": {}
+      }
     },
     "composeServiceName": null,
     "servicePath": "C:\\Users\\Paul\\OneDrive\\Documents\\Projects\\meet\\auth-server",
@@ -16,23 +63,40 @@
       "provider": {
         "name": "aws",
         "runtime": "nodejs16.x",
-        "region": "us-east-1",
+        "region": "eu-west-1",
+        "timeout": 30,
+        "environment": {
+          "CLIENT_ID": "795360494373-cfrv0pcv9avsr5rjd9am9ich9jm5qjpn.apps.googleusercontent.com",
+          "CLIENT_SECRET": "<REDACTED>",
+          "CALENDAR_ID": "fullstackwebdev@careerfoundry.com",
+          "IS_LOCAL": "true"
+        },
         "stage": "dev",
         "versionFunctions": true
       },
       "functions": {
-        "hello": {
-          "handler": "handler.hello",
-          "events": [],
-          "name": "auth-server-dev-hello"
+        "getAuthURL": {
+          "handler": "handler.getAuthURL",
+          "events": [
+            {
+              "http": {
+                "path": "api/get-auth-url",
+                "method": "get"
+              }
+            }
+          ],
+          "name": "auth-server-dev-getAuthURL"
         }
       }
     },
-    "serviceRawFile": "service: auth-server\r\n\r\nprovider:\r\n  name: aws\r\n  runtime: nodejs16.x\r\n  region: us-east-1\r\n\r\nfunctions:\r\n  hello:\r\n    handler: handler.hello",
+    "serviceRawFile": "service: auth-server\r\n\r\nprovider:\r\n  name: aws\r\n  runtime: nodejs16.x\r\n  region: eu-west-1\r\n  timeout: 30 # optional, in seconds, default is 6\r\n  environment:\r\n    CLIENT_ID: ${file(config.json):CLIENT_ID}\r\n    CLIENT_SECRET: ${file(config.json):CLIENT_SECRET}\r\n    CALENDAR_ID: ${file(config.json):CALENDAR_ID}\r\n\r\nfunctions:\r\n  getAuthURL:\r\n    handler: handler.getAuthURL\r\n    events:\r\n      - http:\r\n          path: api/get-auth-url\r\n          method: get",
     "command": [
-      "info"
+      "invoke",
+      "local"
     ],
-    "options": {},
+    "options": {
+      "function": "getAuthURL"
+    },
     "error": null,
     "params": {},
     "machineId": "7aeceb1bdfccd7de7b0ca4f359f22114",
@@ -56,7 +120,7 @@
     "serviceProviderAwsCredentials": "<REDACTED>",
     "serviceProviderAwsAccountId": "253490772772",
     "projectType": "framework",
-    "versionSf": "4.2.1",
+    "versionSf": "4.2.4",
     "serviceProviderAwsCfStackName": "auth-server-dev",
     "integrations": {},
     "serviceProviderAwsCfStackId": "arn:aws:cloudformation:us-east-1:253490772772:stack/auth-server-dev/54320e00-6088-11ef-ba13-12d9638ab2d5",
