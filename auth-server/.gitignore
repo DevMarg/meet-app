@@ -2,7 +2,6 @@
 node_modules
 jspm_packages
 
-# Serverless directories
-auth-server/.serverless/serverless-state.json
+auth-server/.serverless/
 
 config.json
