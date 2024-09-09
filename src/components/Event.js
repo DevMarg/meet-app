@@ -4,6 +4,11 @@ import PropTypes from 'prop-types'
 
 const Event = ({ event }) => {
   const [showDetails, setShowDetails] = useState(false)
+
+  if (!event) {
+    return null; 
+  }
+
   return (
     <li className='event'>
       <span className='eventSummary'>
@@ -29,8 +34,9 @@ const Event = ({ event }) => {
   )
 }
 
+Event.propTypes = {
+    event: PropTypes.object.isRequired
+  }
+
 export default Event;
 
-Event.propTypes = {
-  event: PropTypes.object.isRequired
-}
