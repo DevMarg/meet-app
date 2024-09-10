@@ -6,8 +6,10 @@ const NumberOfEvents = ({ updateNumberOfEvents }) => {
 
   const handleChange = (event) => {
     const value = parseInt(event.target.value, 10);
-    setNumberOfEvents(value);
-    updateNumberOfEvents(value);
+    if (!isNaN(value)) { 
+        setNumberOfEvents(value);
+        updateNumberOfEvents(value);
+      }
   };
 
   return (
@@ -16,7 +18,7 @@ const NumberOfEvents = ({ updateNumberOfEvents }) => {
       <input
         id="number-of-events-input"
         type="number"
-        value={numberOfEvents}
+        value={numberOfEvents || ''}
         onChange={handleChange}
       />
     </div>

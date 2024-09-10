@@ -17,13 +17,13 @@ const App = () => {
       currentCity === "See all cities"
         ? allEvents
         : allEvents.filter((event) => event.location === currentCity);
-    setEvents(filteredEvents.slice(0, numberOfEvents));
+    setEvents(filteredEvents);
     setAllLocations(extractLocations(allEvents));
   };
 
   useEffect(() => {
     fetchData();
-  }, [currentCity]);
+  }, [currentCity, numberOfEvents]);
 
   const updateNumberOfEvents = (number) => {
     setNumberOfEvents(number);
